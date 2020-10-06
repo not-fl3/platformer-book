@@ -1,0 +1,1006 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Platformer book</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Game core</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Game loop</div></li><li class="chapter-item expanded "><a href="tiled/index.html"><strong aria-hidden="true">2.2.</strong> Tiled</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> World</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.1.</strong> Object hierarchy</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.</strong> Player</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="world/player-state-machine.html"><strong aria-hidden="true">2.3.2.1.</strong> State machine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.2.2.</strong> Cutscene state</div></li><li class="chapter-item expanded "><a href="world/win-state.html"><strong aria-hidden="true">2.3.2.3.</strong> Win state</a></li><li class="chapter-item expanded "><a href="world/player-animations.html"><strong aria-hidden="true">2.3.2.4.</strong> Animations</a></li><li class="chapter-item expanded "><a href="world/tweens.html"><strong aria-hidden="true">2.3.2.5.</strong> Tweens</a></li></ol></li><li class="chapter-item expanded "><a href="world/spring.html"><strong aria-hidden="true">2.3.3.</strong> Spring</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.4.</strong> Special levels</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="water.html"><strong aria-hidden="true">2.3.4.1.</strong> Water</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.4.2.</strong> Wind</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> UI</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.1.</strong> Main menu</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.2.</strong> Ingame settings</div></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Juiciness</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="post-effects.html"><strong aria-hidden="true">3.1.</strong> Post processing</a></li><li class="chapter-item expanded "><a href="screen-reading.html"><strong aria-hidden="true">3.2.</strong> Screen reading shaders</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Camera shake</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.4.</strong> Sounds</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Platforms</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Itch.io, HTML5</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Steam, PC</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Play store</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.</strong> App store</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Platformer book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#platformer-book" id="platformer-book">Platformer book</a></h1>
+<p>Rust</p>
+<p>Macroquad</p>
+<p>Stores</p>
+<h1><a class="header" href="#tiled" id="tiled">Tiled</a></h1>
+<p><a href="https://www.mapeditor.org/">tiled</a> is a free, open source level editor.</p>
+<p><code>macroquad-tiled</code> - is an optional part of macroquad responsible for tiled editor integration.</p>
+<h1><a class="header" href="#designing-the-world" id="designing-the-world">Designing the world</a></h1>
+<p><img src="https://i.imgur.com/cavTcqt.png" alt="screenshot" /></p>
+<p><em>This is how the big level made with very basic ideas to what we are going to use here looked in tiled</em></p>
+<h1><a class="header" href="#loading-in-macroquad" id="loading-in-macroquad">Loading in macroquad</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Load json file exported from tiled
+let tiled_map = load_file(&quot;level.json&quot;).await;
+
+// We used some png files in the tiled
+// Those pngs are saved alongside with .json, so lets load them as well
+let tileset_texture = load_texture(&quot;tileset.png&quot;).await;
+let background_texture = load_texture(&quot;background.png&quot;).await;
+
+// And feed all the data loaded to `macroquad-tiled`
+let map = tiled::load_map(
+    &amp;tiled_map,
+    &amp;[
+        (&quot;tileset.png&quot;, tileset_texture),
+        (&quot;background.png&quot;, background_texture),
+    ],
+)?;
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#drawing-tilemaps" id="drawing-tilemaps">Drawing: Tilemaps</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Lets draw the whole map full screen
+// Default macroquad camera is pixel perfect with (0, 0) in top left corner and (screen_width(), screen_height()) on bottom right
+let dest_rect = Rect::new(0., 0., screen_width(), screen_height());
+
+// We used only part of tiled canvas to create our first level
+// So lets draw only that part of the canvas
+// Area is hardcoded for now, but we will use the technique of drawing parts of tiled canvas
+// to jump through level sections in the future
+let source_rect = Rect::new(0, 0, 22, 11);
+
+// And just draw our level!
+map.draw_tiles(&quot;level&quot;, dest_rect, level.area);
+<span class="boring">}
+</span></code></pre></pre>
+<p>#<img src="https://i.imgur.com/eaKBxeW.png" alt="level" /></p>
+<p>It works, we got our nice static background</p>
+<h1><a class="header" href="#drawing-sprites" id="drawing-sprites">Drawing: Sprites</a></h1>
+<p>Now we got the world rendered, let's add some characters.
+We can draw the player right into the tileset and use <code>draw_tiles</code> with different source/destination rects on this part of the tilemap right as we did it for the world.<br />
+But <code>macroquad-tiled</code> have some special functions dedicated for sprites drawing.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    // name of the tileset contains player sprites in the tiled map file
+    const TILESET: &amp;'static str = &quot;tileset&quot;;
+    // sprite number in that tileset
+    const PLAYER_TILE: u32 = 11;
+
+    fn draw(&amp;mut self) {
+        self.map.spr(
+            &quot;tileset&quot;,
+            PLAYER_TILE,
+            Rect::new(self.pos.x(), self.pos.y(), 8., 8.),
+        );
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><img src="https://i.imgur.com/EFHhqP7.gif" alt="player_spr" /></p>
+<h1><a class="header" href="#retro-consoles-vibe" id="retro-consoles-vibe">Retro consoles vibe</a></h1>
+<p>Now we can draw sprites from tileset and draw the whole maps from the same tileset. 
+This actually is pretty close to what we had for game development back into early video console days with hardware sprite controllers!<br />
+Also some fantasy consoles like <code>pico-8</code> use very similar video memory model.</p>
+<h2><a class="header" href="#paralax" id="paralax">Paralax</a></h2>
+<p>In tiled we had two layers - with foreground and background.</p>
+<p>First step: draw the background as well:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>self.tiled_map.draw_tiles(&quot;back&quot;, dest_rect, source_rect);
+self.tiled_map.draw_tiles(&quot;level&quot;, dest_rect, source_rect);
+<span class="boring">}
+</span></code></pre></pre>
+<p>#<a href="https://i.imgur.com/UTcDaSr.png">level_with_background</a></p>
+<p>There is really easy way to add some life to static tiled world: <a href="https://en.wikipedia.org/wiki/Parallax_scrolling">parallax</a> effect.</p>
+<p><em>TODO: figure out order of the chapters to not confuse with suddedenly appeared camera</em></p>
+<p>There are various way to do parallax scrolling, but lets implement some simple hack to demonstrate the idea.</p>
+<pre><code>    
+// this (with magically appeared camera) simple formula will give us 0..1 value
+// with 0 on left side of the level and 1 on the right 
+let parallax_offset = level.camera / vec2(deset_rect.w, dest_rect.h);
+
+// we can just draw the background layer slightly bigger than foreground
+// to make some room to move it around
+let mut dest_rect_parallax = Rect::new(
+    -PARALLAX_EXTRA_W / 2.,
+    -PARALLAX_EXTRA_H / 2., 
+    dest_rect.w + PARALLAX_EXTRA_W / 2., 
+    dest_rect.h + PARALLAX_EXTRA_H / 2.);
+// and now shift it by our offset
+dest_rect_parallax += parallax_offset;
+    
+self.tiled_map.draw_tiles(&quot;back&quot;, dest_rect_parallax, level.area);
+self.tiled_map.draw_tiles(&quot;level&quot;, dest_rect, source_rect);
+</code></pre>
+<p>Now the background is moving slightly different than the foreground.</p>
+<p><img src="https://i.imgur.com/kB7RjI5.gif" alt="parallax" /></p>
+<h1><a class="header" href="#player-state-machine" id="player-state-machine">Player state machine</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct Player {
+    pos: Vec2,
+    spd: Vec2,
+    
+    ...
+    
+    state_machine: StateMachine,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    fn new() -&gt; Player {
+        let mut state_machine = StateMachine::new();
+        
+        // update function will be called on each state_machine.update()
+        state_machine.insert(
+            Self::ST_NORMAL, 
+            State::new()
+                .update(Self::update_normal));
+
+        // coroutine will be started each time player enter dash state 
+        state_machine.insert(
+            Self::ST_DASH,
+            State::new()
+                .update(Self::update_dash)
+                .coroutine(Self::dash_coroutine),
+        );
+
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Dash state: both &quot;update&quot; and &quot;coroutine&quot; are used.<br />
+&quot;dash_coroutine&quot; is responsible for changing player state once at the beginning of the dash and than switching back to &quot;normal&quot;.<br />
+&quot;update&quot; may apply some optional physics or game rules that works only in dash state. Is just an empty function right now.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    // this will be started on each coroutine state enter
+    async fn dash_coroutine(&amp;mut self, room: &amp;mut Room) {
+        // change the speed with dash speed
+        self.spd = self.last_aim * self.dash_speed;
+        // and just wait for dash_duration seconds
+        // during wait period &quot;update_dash&quot; function will be called on each frame
+        wait_seconds(self.dash_duration).await;
+        // dash is over, going back to normal
+        self.state_machine.set_state(Self::ST_NORMAL);
+     
+    }
+
+    // dash update is empty: nothing is affecting player during the dash 
+    fn update_dash(&amp;mut self, room: &amp;mut Room, dt: f32) {}
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Player's &quot;normal&quot; state update: check controls available in &quot;normal&quot; state and maybe switch to &quot;dash&quot; state:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    fn start_dash(&amp;mut self) {
+        self.dashes = 0;
+        // during the dash player has completely different behaviour
+        // changing the playr's state to DASH
+        self.state_machine.set_state(Self::ST_DASH);
+    }
+    
+    fn jump(&amp;mut self) {
+        self.spd.y = self.jump_speed;
+        // during jump player is behaving exactly as usual
+        // so the state do not change here
+    }
+
+    fn update_normal(&amp;mut self, room: &amp;mut Room, dt: f32) {
+        if is_key_pressed(KeyCode::A) {
+            self.start_dash();
+            return;
+        }
+        
+        if is_key_pressed(KeyCode::S) {
+            self.jump();
+            return;
+        }
+        
+        // running
+        ...
+        
+        // gravity
+        ...
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Main player's update function: apply general, state independent game rules and update state machine:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    fn update(&amp;mut self, room: &amp;mut Room) {
+        // physics: apply spd to self.pos with some collisions
+        ...
+        
+        // win conditions check
+        ...
+        
+        // lose conditions check
+        ...
+        
+        // camera update
+        ...
+        
+        self.state_machine.update(room);
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#win-state" id="win-state">Win state</a></h1>
+<p>Small state with cutscene at the end of each level.</p>
+<p><img src="https://i.imgur.com/tVu5FQR.gif" alt="cutscene" /></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    const ST_NORMAL: usize = 0;
+    const ST_DASH: usize = 1;
+    const ST_DEATH: usize = 2;
+    const ST_WIN: usize = 3;
+
+    pub fn new(...) -&gt; Player {
+        let mut state_machine = StateMachine::new();
+
+        state_machine.insert(Self::ST_NORMAL, State::new().update(Self::update_normal));
+        state_machine.insert(
+            Self::ST_DASH,
+            State::new()
+                .update(Self::update_dash)
+                .coroutine(Self::dash_coroutine),
+        );
+        state_machine.insert(
+            Self::ST_DEATH,
+            State::new().coroutine(Self::death_coroutine),
+        );
+        
+        // New state added: Win state
+        state_machine.insert(Self::ST_WIN, State::new().coroutine(Self::win_coroutine));
+        ... 
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    // this function is supposed to be called by collision detection code and signal the player to start win cutscene
+    pub fn win(&amp;mut self, flag_position: Vec2) {
+        self.flag_position = flag_position;
+
+        self.state_machine.set_state(Self::ST_WIN);
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    ...
+    async fn win_coroutine(&amp;mut self, room: &amp;mut Room) -&gt; Coroutine {
+        let start = self.pos;
+        let end = self.flag_position;
+
+        room.in_cutscene = true;
+
+        // here we start 3 independent parallel coroutines moving some player params at the same time
+        let rotate = start_coroutine(tweens::linear(&amp;mut self.rotation, 5.0, 0.7));
+        let scale = start_coroutine(tweens::linear(&amp;mut self.scale, vec2(0.1, 0.1), 0.9));
+        let slowdown = start_coroutine(tweens::linear(&amp;mut self.spd, vec2(0.0, 0.0), 0.3));
+
+        // while coroutines are now runned on background
+        // here we can wait while all 3 of them will finish
+        // and animate the player with those params
+        while !rotate.is_done() || !slowdown.is_done() || !scale.is_done() {
+            self.pos += self.spd * delta;
+            self.pos = self.pos.lerp(end, 0.02);
+
+            next_frame().await;
+        }
+
+        room.in_cutscene = false;
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#animation-controller" id="animation-controller">Animation controller</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// wat really
+async fn play_animation(&amp;mut self) {
+    self.sprite = 322;
+    for _ in 0 .. 9i32 {
+        self.sprite += 1;
+        wait_seconds(0.05).await;
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn death_coroutine(&amp;mut self, room: Room) {
+    self.spd = vec2(0., 0.);
+    self.play_animation().await;
+    room.lose();
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#tweens" id="tweens">Tweens</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn dash_coroutine(&amp;mut self, room: &amp;mut Room) {
+    // change current speed to maximum dash speed
+    self.spd = self.last_aim * self.dash_speed;
+
+    // and than wait for some time to move forward with dash
+    wait_seconds(self.dash_duration).await;
+
+    // release the controls and go back to normal mode
+    self.state_machine.set_state(Self::ST_NORMAL);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>This is cool, but looks not so awesome. 
+To make it better it would be nice to slowly accelerate from current speed to dashspeed instead of instant acceleration. </p>
+<p>Tweens are going to be used. Tweens are special coroutines made specifically for this: change some variable for some time.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>async fn dash_coroutine(&amp;mut self, room: &amp;mut Room) {
+    let target_dash_speed = self.last_aim * self.dash_speed;
+
+    // accelerate from current speed to dash speed for some time
+    tweens::linear(&amp;mut self.spd, target_dash_speed, self.dash_accel_duration).await;
+
+    // and than keep moving with dash speed
+    wait_seconds(self.dash_duration).await;
+
+    // release the controls and go back to normal mode
+    self.state_machine.set_state(Self::ST_NORMAL);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#spring" id="spring">Spring</a></h1>
+<p><img src="https://i.imgur.com/7aIobSo.gif" alt="spring" /></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Spring {
+    pub fn new(...) -&gt; Spring {
+        let mut state_machine = StateMachine::new();
+        
+        state_machine.insert(Self::ST_NORMAL, State::new().update(Self::update_normal));
+        state_machine.insert(
+            Self::ST_JUMP,
+            State::new()
+                .update(Self::update_jump)
+                .coroutine(Self::jump_coroutine),
+        );
+
+        Spring {
+            state_machine: StateMachineContainer::Ready(state_machine),
+            
+            ...
+        }
+    }
+
+    // normal state update: when spring is ready to bounce some players
+    pub fn update_normal(&amp;mut self, room: &amp;mut Room, _dt: f32) {
+        for object in room.objects.iter() {
+            if let GameObject::Player(ref mut player) = object.data {
+                if self.collide(player) {
+                    player.bounce();
+                    self.state_machine.set_state(Self::ST_JUMP);
+                }
+            }
+        }
+    }
+
+    // during jump animation spring do not work as a spring
+    pub fn update_jump(&amp;mut self, _room: &amp;mut Room, _dt: f32) {}
+
+    // this coroutine will be started on enter to jump state
+    pub async fn jump_coroutine(&amp;mut self, _room: &amp;mut Room) {
+       // change a sprite to a compressed spring
+       self.spr = 865;
+       // wait a little bit
+       wait_seconds(2.0).await;
+       // and change sprite back to normal, uncompressed spring
+       self.spr = 864;
+       // and now the spring will work as a spring again
+       self.state_machine.set_state(Self::ST_NORMAL);
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h1><a class="header" href="#water-level" id="water-level">Water level</a></h1>
+<p>Lets implement a very special levels with water.<br />
+For how to draw water take a look on &quot;screen reading shaders&quot; chapter.</p>
+<p>The goal here - implement very unique physics and game rules for being underwater.<br />
+Bonus points for keeping all the old code clean from underwater special cases.</p>
+<p><strong>Barebone swimming state</strong></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    const ST_NORMAL: usize = 0;
+    const ST_DASH: usize = 1;
+    const ST_DEATH: usize = 2;
+    const ST_WIN: usize = 3;
+    // The new state
+    const ST_SWIM: usize = 4;
+
+   pub fn new(...) {
+   ...
+       // state machine configuration for the new state
+       // very similar to all the same custom state from previous chapters
+       state_machine.insert(Self::ST_SWIM, State::new().update(Self::update_swim));
+   }
+   
+    fn update_swim(&amp;mut self, room: &amp;mut Room, dt: f32) {
+        // &quot;swim_check&quot; will look is the middle of the player sprite collides water tile on &quot;water&quot; level
+        // TODO: when collision code will be cleaned up - show swim_check contents
+        if self.swim_check(room) == false {
+            // not in water, back to normal
+            self.state_machine.set_state(Self::ST_NORMAL);
+        }
+
+        // simple water &quot;physics&quot;
+        // if down button is not pushed - player is going up
+        // if is pushed - player going to sink 
+        let mut floating_speed = self.swim_afloat_speed;
+        if is_key_down(KeyCode::Down) {
+            floating_speed = self.swim_sink_speed;
+        }
+        self.spd.y = floating_speed;
+
+        if is_key_down(KeyCode::Right) {
+          ..
+        }
+
+        if is_key_down(KeyCode::Left) {
+          ..
+        }
+    }
+    
+    fn update(&amp;mut self, room: &amp;mut Room) {
+        ...
+        // if player is in the normal state and in the water - switch for water state
+        if self.state_machine.state() == Self::ST_NORMAL &amp;&amp; self.swim_check(room) {
+            self.state_machine.set_state(Self::ST_SWIM);
+        }
+        ...
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><img src="https://user-images.githubusercontent.com/910977/94893803-a27c9a80-044d-11eb-892b-bed255d62e35.gif" alt="water-simple" /></p>
+<p><strong>Oxygen</strong></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    fn update_swim(&amp;mut self, room: &amp;mut Room, dt: f32) {
+        ...
+        self.oxygen -= self.oxygen_consumption * dt;
+
+        if self.oxygen &lt;= 0.0 {
+            // while there is no cutscene state for dead player underwater - jsut ask room to reload level
+            room.lose();
+        }
+        ...
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<p>But oxygen recovery is going to happen in any other non-swimming states. So here for the first time swimming-specific behavior is going to leak just from swimming state to game logic in general.<br />
+It is possible to justify it, though: oxygen is a fundamental law of the game now, so it is fine to do something about it on each frame in main player's update function:</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    ...
+    
+    pub fn update(&amp;mut self, room: &amp;mut Room) {
+        ...
+        if self.swim_check(room) == false {
+            self.oxygen = self.max_oxygen.min(self.oxygen + self.oxygen_recovery * dt);
+        } else {
+            self.oxygen -= self.oxygen_consumption * dt;
+        }        
+        ...
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><strong>Oxygen level UI</strong></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl Player {
+    ...
+    
+    fn draw(&amp;mut self) {
+        // even if player is not swimming state - it would be nice to see how oxygen is recovering
+        if self.state_machine.state() == Self::ST_SWIM || self.oxygen != self.max_oxygen {
+            draw_rectangle(self.pos.x() - 2.3, self.pos.y() - 0.1, 2.6, 6.2, BLACK);
+            draw_rectangle(
+                self.pos.x() - 2.0,
+                self.pos.y(),
+                2.0,
+                6.0 * self.oxygen / self.max_oxygen,
+                BLUE,
+            );
+        }
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Result of that magic constants and hand-adjusted positions in &quot;draw&quot; function:</p>
+<p><img src="https://user-images.githubusercontent.com/910977/94889259-23816500-0441-11eb-9fdd-8634feb6d9e5.gif" alt="water_bar" /></p>
+<p><strong>Out of oxygen post-effect</strong></p>
+<p>For more pressure on the player from running out of oxygen situation lets add some vignette post effect.<br />
+Shader used is going to be very similar to the one used in &quot;post-effects&quot; chapter, but this time the amount of post effect is going to depend on in-game content.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    let material = load_material(
+        VIGNETTE_SHADER,
+        VIGNETTE_SHADER,
+        MaterialParams {
+            uniforms: vec![
+                (&quot;Target&quot;.to_string(), UniformType::Float2),
+                (&quot;Amount&quot;.to_string(), UniformType::Float1),
+            ],
+            ..Default::default()
+        },
+    )
+    .unwrap();
+<span class="boring">}
+</span></code></pre></pre>
+<p>This way macroquad will know that this material have two uniform variables. And now it is possible to set those variables at runtime: </p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>        vignette_material.set_uniform(&quot;Target&quot;, room.vignette_center);
+        vignette_material.set_uniform(&quot;Amount&quot;, room.vignette_amount);
+
+        gl_use_material(vignette_material);
+        
+        // full-screen quad from &quot;post-processing&quot; chapter
+        draw_texture_ex(
+            render_target.texture,
+            0.,
+            0.,
+            WHITE,
+            DrawTextureParams {
+                dest_size: Some(vec2(screen_width(), screen_height())),
+                ..Default::default()
+            },
+        );
+        gl_use_default_material();
+
+<span class="boring">}
+</span></code></pre></pre>
+<p><img src="https://user-images.githubusercontent.com/910977/94890904-43675780-0446-11eb-9a7d-cd5610c20f94.gif" alt="water_vignette" /></p>
+<p>To speed up game tempo we can allow dashing under water.<br />
+Dash can consume significant amount of oxygen, so spending non-optimal amount of dashes or going even a slightly wrong direction will result of fast fail.<br />
+However now it is possible for a player to take some risks and finish level a bit faster!</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>    fn update_swim(&amp;mut self, room: &amp;mut Room, dt: f32) {
+        ...
+        if self.can_dash() {
+            self.oxygen -= self.dash_oxygen_cost;
+            
+            // the same function that was used in &quot;update_normal&quot;
+            // so its going to be exactly the same dash as in underwater state
+            self.start_dash();
+            return;
+        }
+        ...
+    }
+
+<span class="boring">}
+</span></code></pre></pre>
+<p><img src="https://user-images.githubusercontent.com/910977/94891424-9f7eab80-0447-11eb-9787-542aba3a09e6.gif" alt="water_vignette_dash" /></p>
+<h1><a class="header" href="#post-processing" id="post-processing">Post processing</a></h1>
+<h2><a class="header" href="#step-0-no-post-processing" id="step-0-no-post-processing">Step 0: No post processing</a></h2>
+<pre><code>#[macroquad::main(&quot;Post processing&quot;)]
+async fn main() {
+    loop {
+        set_camera(Camera2D {
+            zoom: vec2(0.01, 0.01),
+            target: vec2(0.0, 0.0),
+            ..Default::default()
+        });
+        
+        clear_background(RED);
+        draw_line(-30.0, 45.0, 30.0, 45.0, 3.0, BLUE);
+        draw_circle(-45.0, -35.0, 20.0, YELLOW);
+        draw_circle(45.0, -35.0, 20.0, GREEN);
+        
+        next_frame().await;
+    }
+}
+</code></pre>
+<p><img src="https://i.imgur.com/X4mew1P.png" alt="" /></p>
+<h2><a class="header" href="#step-1-pixelisation" id="step-1-pixelisation">Step 1: Pixelisation</a></h2>
+<pre><code>let render_target = render_target(320, 150);
+
+set_texture_filter(render_target.texture, FilterMode::Nearest);
+
+loop {
+  // drawing to the texture
+
+  // add &quot;render_target&quot; field to camera setup
+  // now it will render to texture 
+  set_camera(Camera2D {
+    zoom: vec2(0.01, 0.01),
+    target: vec2(0.0, 0.0),
+    render_target: Some(render_target),
+    ..Default::default()
+  });
+
+  clear_background(RED);
+
+  // draw our game!
+  draw_line(-30.0, 45.0, 30.0, 45.0, 3.0, BLUE);
+  draw_circle(-45.0, -35.0, 20.0, YELLOW);
+  draw_circle(45.0, -35.0, 20.0, GREEN);
+
+  // drawing to the screen
+
+  // 0..1, 0..1 camera
+  set_camera(Camera2D {
+    zoom: vec2(1.0, 1.0),
+    target: vec2(0.0, 0.0),
+    ..Default::default()
+  });
+
+  // draw full screen quad with previously rendered scene
+  draw_texture_ex(
+      render_target.texture,
+      0.,
+      0.,
+      WHITE,
+      DrawTextureParams {
+          dest_size: Some(vec2(1.0, 1.0)),
+          ..Default::default()
+      },
+  );
+
+</code></pre>
+<p>We got nicely pixelized, old-schoold game.</p>
+<p><img src="https://i.imgur.com/shyFuNp.png" alt="" /></p>
+<h2><a class="header" href="#step-3-shaders" id="step-3-shaders">Step 3: Shaders</a></h2>
+<p>But just pixelization is not enough.<br />
+Let glean some cool post-processing effect from shadertoy.</p>
+<p>https://www.shadertoy.com/view/XtlSD7 CRT effect!</p>
+<pre><code>// same render target setup from previous step
+let render_target = render_target(320, 150);
+set_texture_filter(render_target.texture, FilterMode::Nearest);
+
+// 
+let material = load_material(CRT_VERTEX_SHADER, CRT_FRAGMENT_SHADER, Default::default()).unwrap();
+
+// main loop is going to be exactly the same 
+loop {
+   // drawing to the texture
+   ...
+   
+  // draw full screen quad with previously rendered scene
+  // but before drawing texture, default macroquad material
+  // needs to be replaced to the new one with CRT shader
+  gl_use_material(material);
+
+  draw_texture_ex(
+      render_target.texture,
+      0.,
+      0.,
+      WHITE,
+      DrawTextureParams {
+          dest_size: Some(vec2(1.0, 1.0)),
+          ..Default::default()
+      },
+  );
+  // switch back to default material
+  gl_use_default_material();
+ 
+}
+</code></pre>
+<p><img src="https://i.imgur.com/Cx6GhWm.png" alt="" /></p>
+<p>Entire code for this example is available here: https://github.com/not-fl3/macroquad/blob/master/examples/post_processing.rs
+Web build: https://not-fl3.github.io/miniquad-samples/post_processing.html</p>
+<h1><a class="header" href="#screen-reading-shaders" id="screen-reading-shaders">Screen reading shaders</a></h1>
+<p>Some effects requires reading from the same target the shader is writing to.</p>
+<p>Good example - glass shader with some distortion and refraction. Or water shader in our case!</p>
+<p><img src="https://user-images.githubusercontent.com/910977/94856759-0bd0bf00-03f6-11eb-9b13-05335fb1e34d.gif" alt="water" /></p>
+<p>The idea here:</p>
+<ul>
+<li>render whole scene</li>
+<li>render the mesh for water with refraction shader</li>
+<li>make refractions realistic - read screen data in the shader</li>
+</ul>
+<p><strong>First step: render water layer with default material</strong></p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>impl World {
+    ...
+    fn draw(&amp;mut self) {
+        // draw the whole world
+        ...
+   
+       // draw tiled layer with water
+       self.tiled_map.draw_tiles(&quot;water&quot;, dest_rect, level.area);
+   }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><img src="https://user-images.githubusercontent.com/910977/94857384-07f16c80-03f7-11eb-8246-f0659167f3a2.png" alt="water_plain" /></p>
+<p><strong>Second step: add some refractions</strong></p>
+<p>Just as in previous chapter we need a material with custom shader</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let water_material = load_material(WATER_VERTEX_SHADER, WATER_FRAGMENT_SHADER, Default::default()).unwrap();
+
+...
+// use that material
+
+gl_use_material(self.water_material);
+// draw tiled layer with water
+self.tiled_map.draw_tiles(&quot;water&quot;, dest_rect, level.area);
+gl_use_default_material();
+<span class="boring">}
+</span></code></pre></pre>
+<p>This was pretty much the same as in previous, post-processing chapter.<br />
+The most intresting part is in the shader.</p>
+<p>In macroquad there are bunch of built-in shader variables.</p>
+<p>TODO: link to a list of builtins</p>
+<p>For water shader we are going to use two of them:</p>
+<pre><code class="language-C">uniform vec4 _Time;
+uniform sampler2D _ScreenTexture;
+</code></pre>
+<p><code>_Time</code> contains time passed since game start.
+<code>_ScreenTexture</code> is a very special texture. When material with <code>_ScreenTexture</code> in the shader is used for the first time in current frame, macroquad will take a &quot;snapshot&quot; of current active render target and will place a copy of it into _ScreenTexture.</p>
+<p>So in the sahder we will be able to read the frame how it is rendered so far and use the frame data while rendering water mesh itself.</p>
+<p>TODO: link to game GH with shader itself</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
