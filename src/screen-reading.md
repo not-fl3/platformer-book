@@ -62,4 +62,4 @@ uniform sampler2D _ScreenTexture;
 
 So in the sahder we will be able to read the frame how it is rendered so far and use the frame data while rendering water mesh itself.
 
-TODO: link to game GH with shader itself
+[water.glsl](https://gist.github.com/not-fl3/066dfb1e63d3c28d1b5519854d59afe8)
