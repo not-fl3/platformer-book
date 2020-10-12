@@ -22,6 +22,7 @@
 - [Juiciness]()
   - [Post processing](./post-effects.md)
   - [Screen reading shaders](./screen-reading.md)
+  - [Particles: Water splash](./particles-splash.md)
   - [Camera shake]()
   - [Sounds]()
 - [Platforms]()
