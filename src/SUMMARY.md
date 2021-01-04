@@ -30,3 +30,4 @@
   - [Steam, PC]()
   - [Play store]()
   - [App store]()
+- [Profiling](./profiling.md)
